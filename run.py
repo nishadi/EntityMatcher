@@ -38,7 +38,8 @@ def run_experiment(model_name, dataset_dir, embedding_dir):
                     batch_size=64,
                     label_smoothing=0.05,
                     pos_weight=1.5,
-                    best_save_path='best_model_.pth' + gpu_no + '.pth')
+                    best_save_path=dataset_dir.split('/')[1] +
+                                    'best_model_.pth' + gpu_no + '.pth')
     train_time = time.time() - start_time
     train_max_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
